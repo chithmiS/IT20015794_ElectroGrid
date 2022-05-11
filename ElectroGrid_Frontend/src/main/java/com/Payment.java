@@ -151,5 +151,52 @@ public class Payment {
 		 } 
 		return output; 
 		}
+	
+	//Update payment details method
+	public String updatePayment(String payID, String AccNumber, String totalAmount, String payDate, String cardType, String cardNumber, String cvn)
+	{ 
+			
+				String output = ""; 
+				
+				try{ 
+						Connection con = connect(); 
+						if (con == null){
+							return "Error while connecting to the database for updating.";
+							} 
+						
+						// create a prepared statement
+						
+						String query = "UPDATE payments SET AccNumber=?,totalAmount=?,payDate=?,cardType=?,cardNumber=?,cvn=? WHERE payID=?";
+						PreparedStatement preparedStmt = con.prepareStatement(query);
+						
+						// binding values
+						
+						 preparedStmt.setString(1, AccNumber);
+						 preparedStmt.setDouble(2, Double.parseDouble(totalAmount));
+						 preparedStmt.setString(3, payDate);
+						 preparedStmt.setString(4, cardType);
+						 preparedStmt.setString(5, cardNumber);
+						 preparedStmt.setString(6, cvn);
+						 preparedStmt.setInt(7, Integer.parseInt(payID));
+						
+						// execute the statement
+						 
+						preparedStmt.execute(); 
+						con.close(); 
+						String newPayments = readPayments(); 
+						output = "{\"status\":\"success\",\"data\":\""+newPayments+"\"}"; 
+
+				} 
+				
+				catch (Exception e){ 
+					
+					output = "{\"status\":\"error\",\"data\":\"Error while updating the payment details.\"}"; 
+
+					System.err.println(e.getMessage()); 
+					
+				} 
+				
+				return output; 
+		} 
 		
 }
