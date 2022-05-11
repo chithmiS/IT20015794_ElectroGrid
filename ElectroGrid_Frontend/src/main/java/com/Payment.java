@@ -198,5 +198,43 @@ public class Payment {
 				
 				return output; 
 		} 
+	
+	//Delete payment method
+	public String deletePayment(String payID)
+	{ 
+			
+				String output = ""; 
+				
+				try{ 
+					Connection con = connect(); 
+					
+					if (con == null){
+						return "Error while connecting to the database for deleting."; 
+						} 
+					
+					// create a prepared statement
+					
+					String query = "delete from payments where payID=?";
+					PreparedStatement preparedStmt = con.prepareStatement(query); 
+					
+					// binding values
+					
+					preparedStmt.setInt(1, Integer.parseInt(payID));
+					
+					// execute the statement
+					
+					preparedStmt.execute(); 
+					con.close(); 
+					String newPayments = readPayments(); 
+					 output = "{\"status\":\"success\",\"data\":\""+newPayments+"\"}"; 
+
+				} 
+				
+				catch (Exception e){ 
+					output = "{\"status\":\"error\",\"data\":\"Error while deleting the payment Details.\"}";
+					System.err.println(e.getMessage()); 
+				} 
+				return output; 
+		} 
 		
 }
