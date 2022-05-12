@@ -22,7 +22,7 @@
 	 			<input id="totalAmount" name="totalAmount" type="text" class="form-control form-control-sm">
 	 			<br>
 	 		 Payment Date: 
-				<input id="payDate" name="payDate" type="text"  class="form-control form-control-sm">
+				<input id="payDate" name="payDate" type="date"  class="form-control form-control-sm">
 	 			<br>
 	 		 Card Type: 
 	 			<input id="cardType" name="cardType" type="text" class="form-control form-control-sm">
