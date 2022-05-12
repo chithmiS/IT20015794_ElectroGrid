@@ -1,3 +1,6 @@
+<%@page import="com.Payment"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,3 +41,14 @@
 		<div id="alertError" class="alert alert-danger"></div>
 		
 		<br>
+		
+		<div id="divPaymentsGrid">
+		 <%
+			 Payment paymentObj = new Payment(); 
+			 out.print(paymentObj.readPayments()); 
+		 %>
+		</div>
+		</div> </div> </div> 
+
+</body>
+</html>
