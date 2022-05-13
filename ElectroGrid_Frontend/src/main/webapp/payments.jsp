@@ -11,10 +11,15 @@
 <script src="Components/payments.js"></script>
 </head>
 <body>
-	<div class="container"><div class="row"><div class="col-6"> 
-	<h1>Payment Management</h1>
-	
-		<form id="formPayment" name="formPayment" method="post" action="payments.jsp">
+
+	<div class="container"> <div class="col-7">
+	<br>
+	<div class="jumbotron">
+	<h1 class="display-6" align="center">Payment Management</h1>
+	<br>
+		
+		<form  id="formPayment" name="formPayment" method="post" action="payments.jsp">
+		
 			 Account Number: 
 	 			<input id="AccNumber" name="AccNumber" type="text" class="form-control form-control-sm">
 			 	<br>
@@ -33,13 +38,17 @@
 	 		 CVN: 
 	 			<input id="cvn" name="cvn" type="text" class="form-control form-control-sm">
 	 			<br>
+	 			<div style="text-align:center">  
 	 			<input id="btnSave" name="btnSave" type="button" value="Save" class="btn btn-primary">
 	 			<input type="hidden" id="hidpayIDSave" name="hidpayIDSave" value="">
+	 			</div>
+	 	
 		</form>
+		
 		<br><br>
 		<div id="alertSuccess" class="alert alert-success"></div>
 		<div id="alertError" class="alert alert-danger"></div>
-		
+		</div>
 		<br>
 		
 		<div id="divPaymentsGrid">
@@ -48,7 +57,7 @@
 			 out.print(paymentObj.readPayments()); 
 		 %>
 		</div>
-		</div> </div> </div> 
+		</div> </div> 
 
 </body>
 </html>
