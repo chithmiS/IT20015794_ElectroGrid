@@ -90,7 +90,7 @@ public class Payment {
 	 
 			// Prepare the HTML table to be displayed
 	 
-			 output = "<table border='1'><tr><th>Payment ID</th><th>Account Number</th>"
+			 output = "<table border='1'class='table'><tr><th>Payment ID</th><th>Account Number</th>"
 					 +"<th>Total Amount</th>" 
 					 +"<th>Payment Date</th>"
 					 +"<th>Card Type</th>"

@@ -15,27 +15,28 @@
 	<div class="container"> <div class="col-7">
 	<br>
 	<div class="jumbotron">
-	<h1 class="display-6" align="center">Payment Management</h1>
+	<h1 class="display-6" align="center">Payment Details</h1>
+	<br>
 	<br>
 		
 		<form  id="formPayment" name="formPayment" method="post" action="payments.jsp">
 		
-			 Account Number: 
+			 <b>Account Number: </b>
 	 			<input id="AccNumber" name="AccNumber" type="text" class="form-control form-control-sm">
 			 	<br>
-			 Total Amount: 
+			 <b>Total Amount: </b>
 	 			<input id="totalAmount" name="totalAmount" type="text" class="form-control form-control-sm">
 	 			<br>
-	 		 Payment Date: 
+	 		<b> Payment Date: </b>
 				<input id="payDate" name="payDate" type="date"  class="form-control form-control-sm">
 	 			<br>
-	 		 Card Type: 
+	 		 <b> Card Type: </b>
 	 			<input id="cardType" name="cardType" type="text" class="form-control form-control-sm">
 	 			<br>
-	 		 Card Number: 
+	 		 <b>Card Number: </b>
 	 			<input id="cardNumber" name="cardNumber" type="text" class="form-control form-control-sm">
 	 			<br>
-	 		 CVN: 
+	 		<b> CVN:</b> 
 	 			<input id="cvn" name="cvn" type="text" class="form-control form-control-sm">
 	 			<br>
 	 			<div style="text-align:center">  
